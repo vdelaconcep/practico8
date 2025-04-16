@@ -8,19 +8,19 @@ const server = http.createServer((req, res) => {
 
     switch (req.url) {
         case "/index":
-            filePath = "./public/index.html"
+            filePath = "./index.html"
             break
         
         case "/about":
-            filePath = "./public/pages/about.html"
+            filePath = "./pages/about.html"
             break
         
         case "/contact":
-            filePath = "./public/pages/contact.html"
+            filePath = "./pages/contact.html"
             break;
         
         default:
-            filePath = "./public/pages/error.html"
+            filePath = "./pages/error.html"
     }
 
     fs.readFile(filePath, (err, content) => {
