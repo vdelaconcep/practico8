@@ -7,16 +7,20 @@ const server = http.createServer((req, res) => {
     let filePath = ""
 
     switch (req.url) {
+        case "/":
+            filePath = "./public/index.html";
+            break
+        
         case "/index":
-            filePath = "./public/index.html"
+            filePath = "./public/index.html";
             break
         
         case "/about":
-            filePath = "./public/pages/about.html"
+            filePath = "./public/pages/about.html";
             break
         
         case "/contact":
-            filePath = "./public/pages/contact.html"
+            filePath = "./public/pages/contact.html";
             break;
         
         default:
@@ -36,5 +40,5 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}/index`);
+    console.log(`Servidor escuchando en http://localhost:${port}/`);
 })
