@@ -8,19 +8,19 @@ const server = http.createServer((req, res) => {
 
     switch (req.url) {
         case "/index":
-            filePath = "./index.html"
+            filePath = "./public/index.html"
             break
         
         case "/about":
-            filePath = "./pages/about.html"
+            filePath = "./public/pages/about.html"
             break
         
         case "/contact":
-            filePath = "./pages/contact.html"
+            filePath = "./public/pages/contact.html"
             break;
         
         default:
-            filePath = "./pages/error.html"
+            filePath = "./public/pages/error.html"
     }
 
     fs.readFile(filePath, (err, content) => {
@@ -36,5 +36,5 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(port, () => {
-    console.log("Servidor escuchando en http://localhost:${port}");
+    console.log(`Servidor escuchando en http://localhost:${port}/index`);
 })
